@@ -14,6 +14,9 @@ error_reporting(E_ALL);
 // require needed files
 require_once('vendor/autoload.php');
 
+// require the pet class (TEMP)
+require ('pet.php');
+
 // instantiate Fat-Free
 $f3 = Base::instance();
 
@@ -21,8 +24,18 @@ $f3 = Base::instance();
 // default (home) route
 $f3->route('GET /', function () {
     // display the home page
-    $view = new Template();
-    echo $view->render('views/home.html');
+    //$view = new Template();
+    //echo $view->render('views/home.html');
+    echo '<h1>Hello, pets!</h1>';
+
+    // instantiate a pet object
+    $pet1 = new Pet();
+
+    // invoke the eat method
+    $pet1->eat();
+
+    $pet1->talk();
+    $pet1->sleep();
 });
 
 // run Fat-Free

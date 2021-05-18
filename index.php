@@ -4,7 +4,7 @@
  * 328/pets-oop/index.php
  * Phillip Ball
  * 05/18/2021
- *
+ * Week 8 OOP demo
 */
 
 // turn on error-reporting
@@ -19,10 +19,7 @@ $f3 = Base::instance();
 
 // define routes
 // default (home) route
-$f3->route('GET /', function ($f3) {
-    // Add userQuotes to the hive
-    $f3->set("userQuotes", getUserQuotes());
-
+$f3->route('GET /', function () {
     // display the home page
     $view = new Template();
     echo $view->render('views/home.html');
